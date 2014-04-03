@@ -111,7 +111,7 @@
       "description": "Ping FlowHub",
       "ns": "flowhub",
       "name": "ping",
-      "fn": "on.input.runtime = function() {\n\n input.runtime.ping((function(err) {\n   cb({ runtime: input.runtime, error: err });\n });\n\n};\n"
+      "fn": "on.input.runtime = function() {\n\n input.runtime.ping(function(err) {\n   cb({ runtime: input.runtime, error: err });\n });\n\n};\n"
     },
     {
       "ports": {
