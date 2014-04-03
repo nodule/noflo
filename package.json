@@ -23,6 +23,7 @@
     "color": "rgb(255,255,255)"
   },
   "dependencies": {
+    "flowhub-registry": "0.0.2",
     "noflo": "0.x.x"
   }
 }
