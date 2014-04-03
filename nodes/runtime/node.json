@@ -32,7 +32,7 @@
       },
       "address": {
         "title": "Address",
-        "type": "url"
+        "type": "string"
       },
       "system": {
         "title": "System type",
