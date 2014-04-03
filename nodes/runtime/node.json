@@ -1,0 +1,53 @@
+{
+  "name": "runtime",
+  "ns": "flowhub",
+  "description": "FlowHub Runtime",
+  "phrases": {
+    "active": "Creating Flowhub Runtime"
+  },
+  "require": {
+    "flowhub-registry": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "label": {
+        "title": "Label",
+        "type": "string"
+      },
+      "id": {
+        "title": "ID",
+        "type": "string"
+      },
+      "user": {
+        "title": "User UUID",
+        "type": "string"
+      },
+      "secret": {
+        "title": "Secret",
+        "type": "string"
+      },
+      "protocol": {
+        "title": "Protocol",
+        "type": "string"
+      },
+      "address": {
+        "title": "Address",
+        "type": "url"
+      },
+      "system": {
+        "title": "System type",
+        "type": "string"
+      }
+    },
+    "output": {
+      "error": {
+        "title": "Error",
+        "type": "object"
+      },
+      "runtime": {
+        "title": "Flowhub Runtime",
+        "type": "function"
+      }
+    }
+  }
+}

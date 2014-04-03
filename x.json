@@ -1,0 +1,171 @@
+{
+  "name": "noflo",
+  "description": "Noflo for Chiχ",
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodule/noflo.git"
+  },
+  "dependencies": {
+    "noflo": "0.x.x"
+  },
+  "nodes": [
+    {
+      "ports": {
+        "input": {
+          "in": {
+            "title": "Graph",
+            "type": "object"
+          },
+          "noflo": {
+            "title": "Noflo",
+            "type": "function"
+          }
+        },
+        "output": {
+          "network": {
+            "title": "Network",
+            "type": "function"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Creating Noflo Network"
+      },
+      "description": "Noflo Create Network",
+      "ns": "noflo",
+      "name": "createNetwork",
+      "fn": "output.out = [input.noflo, 'createNetwork', input. in ]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "noflo": {
+            "title": "Noflo",
+            "type": "object"
+          },
+          "in": {
+            "title": "Data",
+            "type": "object"
+          }
+        },
+        "output": {
+          "out": {
+            "title": "Graph",
+            "type": "object"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Creating Noflo graph"
+      },
+      "description": "Noflo Graph",
+      "ns": "noflo",
+      "name": "graph",
+      "fn": "output.out = [input.noflo.graph, 'loadFbp', input. in ]\n"
+    },
+    {
+      "ports": {
+        "input": {},
+        "output": {
+          "noflo": {
+            "title": "Noflo",
+            "type": "function"
+          }
+        }
+      },
+      "require": {
+        "noflo": "0.x.x"
+      },
+      "phrases": {
+        "active": "Creating Noflo graph"
+      },
+      "description": "Noflo Graph",
+      "ns": "noflo",
+      "name": "noflo",
+      "fn": "output.noflo = noflo\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "runtime": {
+            "title": "Flowhub Runtime",
+            "type": "function"
+          }
+        },
+        "output": {
+          "error": {
+            "title": "Error",
+            "type": "object"
+          },
+          "runtime": {
+            "title": "Flowhub Runtime",
+            "type": "function"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Pinging to Flowhub"
+      },
+      "description": "Ping FlowHub",
+      "ns": "flowhub",
+      "name": "ping",
+      "fn": "on.input.runtime = function() {\n\n input.runtime.ping((function(err) {\n   cb({ runtime: input.runtime, error: err });\n });\n\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "id": {
+            "title": "ID",
+            "type": "string"
+          },
+          "user": {
+            "title": "User UUID",
+            "type": "string"
+          },
+          "secret": {
+            "title": "Secret",
+            "type": "string"
+          },
+          "protocol": {
+            "title": "Protocol",
+            "type": "string"
+          },
+          "address": {
+            "title": "Address",
+            "type": "url"
+          },
+          "system": {
+            "title": "System type",
+            "type": "string"
+          }
+        },
+        "output": {
+          "error": {
+            "title": "Error",
+            "type": "object"
+          },
+          "runtime": {
+            "title": "Flowhub Runtime",
+            "type": "function"
+          }
+        }
+      },
+      "require": {
+        "flowhub-registry": "0.x.x"
+      },
+      "phrases": {
+        "active": "Creating Flowhub Runtime"
+      },
+      "description": "FlowHub Runtime",
+      "ns": "flowhub",
+      "name": "runtime",
+      "fn": "output = function() {\n\n var runtime = new flowhub_registry.Runtime({\n   label: input.label,\n   id: input.id,\n   user: input.user,\n   secret: input.secret,\n   protocol: input.protocol,\n   address: input.address,\n   type: input.system\n });\n\n runtime.register(function(err) {\n   cb({ runtime: runtime, error: err });\n });\n\n};\n"
+    }
+  ],
+  "twigs": []
+}

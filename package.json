@@ -1,0 +1,28 @@
+{
+  "name": "nodule-noflo",
+  "description": "Noflo for Chiχ",
+  "author": "Rob Halff <rob.halff@gmail.com>",
+  "version": "0.0.2",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodule/noflo.git"
+  },
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "main": "x",
+  "scripts": {
+    "test": "chit -r"
+  },
+  "devDependencies": {
+    "chit": "0.x.x"
+  },
+  "chix": {
+    "name": "noflo",
+    "color": "rgb(255,255,255)"
+  },
+  "dependencies": {
+    "noflo": "0.x.x"
+  }
+}

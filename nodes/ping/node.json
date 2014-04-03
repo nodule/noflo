@@ -1,0 +1,26 @@
+{
+  "name": "ping",
+  "ns": "flowhub",
+  "description": "Ping FlowHub",
+  "phrases": {
+    "active": "Pinging to Flowhub"
+  },
+  "ports": {
+    "input": {
+      "runtime": {
+        "title": "Flowhub Runtime",
+        "type": "function"
+      }
+    },
+    "output": {
+      "error": {
+        "title": "Error",
+        "type": "object"
+      },
+      "runtime": {
+        "title": "Flowhub Runtime",
+        "type": "function"
+      }
+    }
+  }
+}

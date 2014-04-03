@@ -1,0 +1,21 @@
+{
+  "name": "noflo",
+  "ns": "noflo",
+  "description": "Noflo Graph",
+  "phrases": {
+    "active": "Creating Noflo graph"
+  },
+  "require": {
+    "noflo": "0.x.x"
+  },
+  "ports": {
+    "input": {
+    },
+    "output": {
+      "noflo": {
+        "title": "Noflo",
+        "type": "function"
+      }
+    }
+  }
+}

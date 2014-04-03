@@ -1,0 +1,26 @@
+{
+  "name": "graph",
+  "ns": "noflo",
+  "description": "Noflo Graph",
+  "phrases": {
+    "active": "Creating Noflo graph"
+  },
+  "ports": {
+    "input": {
+      "noflo": {
+        "title": "Noflo",
+        "type": "object"
+      },
+      "in": {
+        "title": "Data",
+        "type": "object"
+      }
+    },
+    "output": {
+      "out": {
+        "title": "Graph",
+        "type": "object"
+      }
+    }
+  }
+}
