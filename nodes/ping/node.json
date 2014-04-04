@@ -1,6 +1,7 @@
 {
   "name": "ping",
   "ns": "flowhub",
+  "async": true,
   "description": "Ping FlowHub",
   "phrases": {
     "active": "Pinging to Flowhub"
@@ -9,7 +10,8 @@
     "input": {
       "runtime": {
         "title": "Flowhub Runtime",
-        "type": "function"
+        "type": "function",
+        "async": true
       }
     },
     "output": {

@@ -91,7 +91,8 @@
         "input": {
           "runtime": {
             "title": "Flowhub Runtime",
-            "type": "function"
+            "type": "function",
+            "async": true
           }
         },
         "output": {
@@ -109,9 +110,10 @@
         "active": "Pinging to Flowhub"
       },
       "description": "Ping FlowHub",
+      "async": true,
       "ns": "flowhub",
       "name": "ping",
-      "fn": "on.input.runtime = function() {\n\n input.runtime.ping(function(err) {\n   cb({ runtime: input.runtime, error: err });\n });\n\n};\n"
+      "fn": "on.input.runtime = function() {\n\n data.ping(function(err) {\n   if(err) {\n     cb({ error: err });\n   } else {\n     cb({ runtime: data });\n   }\n });\n\n};\n"
     },
     {
       "ports": {
