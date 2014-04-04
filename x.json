@@ -91,7 +91,7 @@
         "input": {
           "runtime": {
             "title": "Flowhub Runtime",
-            "type": "object"
+            "type": "function"
           }
         },
         "output": {
@@ -101,7 +101,7 @@
           },
           "runtime": {
             "title": "Flowhub Runtime",
-            "type": "object"
+            "type": "function"
           }
         }
       },
