@@ -113,7 +113,7 @@
       "async": true,
       "ns": "flowhub",
       "name": "ping",
-      "fn": "on.input.runtime = function() {\n\n  data.ping();\n  cb({ runtime: data });\n\n};\n"
+      "fn": "on.input.runtime = function() {\n\n  data.ping(function(err) {\n    if(err) {\n      output({ error: err });\n    } else {\n      output({ runtime: data });\n    }\n\n  });\n\n};\n"
     },
     {
       "ports": {

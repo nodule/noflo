@@ -1,6 +1,12 @@
 on.input.runtime = function() {
 
-  data.ping();
-  cb({ runtime: data });
+  data.ping(function(err) {
+    if(err) {
+      output({ error: err });
+    } else {
+      output({ runtime: data });
+    }
+
+  });
 
 };
