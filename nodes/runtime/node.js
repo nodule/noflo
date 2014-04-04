@@ -11,7 +11,8 @@ output = function() {
  });
 
  runtime.register(function(err) {
-   cb({ runtime: runtime, error: err });
+   //cb({ runtime: runtime, error: err });
+   cb({ runtime: runtime });
  });
 
 };

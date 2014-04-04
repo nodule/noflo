@@ -165,7 +165,7 @@
       "description": "FlowHub Runtime",
       "ns": "flowhub",
       "name": "runtime",
-      "fn": "output = function() {\n\n var runtime = new flowhub_registry.Runtime({\n   label: input.label,\n   id: input.id,\n   user: input.user,\n   secret: input.secret,\n   protocol: input.protocol,\n   address: input.address,\n   type: input.system\n });\n\n runtime.register(function(err) {\n   cb({ runtime: runtime, error: err });\n });\n\n};\n"
+      "fn": "output = function() {\n\n var runtime = new flowhub_registry.Runtime({\n   label: input.label,\n   id: input.id,\n   user: input.user,\n   secret: input.secret,\n   protocol: input.protocol,\n   address: input.address,\n   type: input.system\n });\n\n runtime.register(function(err) {\n   //cb({ runtime: runtime, error: err });\n   cb({ runtime: runtime });\n });\n\n};\n"
     }
   ],
   "twigs": []
