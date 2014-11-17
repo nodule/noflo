@@ -5,17 +5,18 @@
   "phrases": {
     "active": "Creating Noflo graph"
   },
-  "require": {
-    "noflo": "0.x.x"
-  },
   "ports": {
-    "input": {
-    },
+    "input": {},
     "output": {
       "noflo": {
         "title": "Noflo",
         "type": "function"
       }
+    }
+  },
+  "dependencies": {
+    "npm": {
+      "noflo": "0.x.x"
     }
   }
 }

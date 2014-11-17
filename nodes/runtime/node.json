@@ -5,9 +5,6 @@
   "phrases": {
     "active": "Creating Flowhub Runtime"
   },
-  "require": {
-    "flowhub-registry": "0.x.x"
-  },
   "ports": {
     "input": {
       "label": {
@@ -48,6 +45,11 @@
         "title": "Flowhub Runtime",
         "type": "function"
       }
+    }
+  },
+  "dependencies": {
+    "npm": {
+      "flowhub-registry": "0.x.x"
     }
   }
 }
