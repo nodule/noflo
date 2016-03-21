@@ -1,13 +1,13 @@
 output = function() {
 
  var runtime = new flowhub_registry.Runtime({
-   label: input.label,
-   id: input.id,
-   user: input.user,
-   secret: input.secret,
-   protocol: input.protocol,
-   address: input.address,
-   type: input.system
+   label: $.label,
+   id: $.id,
+   user: $.user,
+   secret: $.secret,
+   protocol: $.protocol,
+   address: $.address,
+   type: $.system
  });
 
  runtime.register(function(err) {
