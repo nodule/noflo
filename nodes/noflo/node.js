@@ -1,1 +1,1 @@
-output.noflo = noflo
+output.noflo = $.create(noflo)

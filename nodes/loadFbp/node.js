@@ -1,1 +1,1 @@
-output.out = [$.noflo.graph, 'loadFbp', $. in ]
+output.out = [$.noflo.graph, 'loadFbp', $.in]

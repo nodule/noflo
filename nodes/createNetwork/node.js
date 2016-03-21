@@ -1,1 +1,1 @@
-output.out = [$.noflo, 'createNetwork', $. in ]
+output.out = [$.noflo, 'createNetwork', $.in]

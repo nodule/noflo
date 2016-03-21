@@ -1,9 +1,9 @@
 on.input.runtime = function() {
   $.runtime.ping(function(err) {
     if(err) {
-      output({ error: err });
+      output({ error: $.create(err) });
     } else {
-      output({ runtime: $.runtime });
+      output({ runtime: $.get('runtime') });
     }
 
   });
