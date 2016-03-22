@@ -36,7 +36,7 @@
       "description": "Noflo Create Network",
       "ns": "noflo",
       "name": "createNetwork",
-      "fn": "output.out = [input.noflo, 'createNetwork', input. in ]\n"
+      "fn": "output.out = [$.noflo, 'createNetwork', $.in]\n"
     },
     {
       "ports": {
@@ -63,7 +63,7 @@
       "description": "Noflo Graph",
       "ns": "noflo",
       "name": "graph",
-      "fn": "output.out = [input.noflo.graph, 'loadFbp', input. in ]\n"
+      "fn": "output.out = [$.noflo.graph, 'loadFbp', $.in]\n"
     },
     {
       "dependencies": {
@@ -86,7 +86,7 @@
       "description": "Noflo Graph",
       "ns": "noflo",
       "name": "noflo",
-      "fn": "output.noflo = noflo\n"
+      "fn": "output.noflo = $.create(noflo)\n"
     },
     {
       "ports": {
@@ -115,7 +115,7 @@
       "async": true,
       "ns": "flowhub",
       "name": "ping",
-      "fn": "on.input.runtime = function() {\n\n  data.ping(function(err) {\n    if(err) {\n      output({ error: err });\n    } else {\n      output({ runtime: data });\n    }\n\n  });\n\n};\n"
+      "fn": "on.input.runtime = function() {\n  $.runtime.ping(function(err) {\n    if(err) {\n      output({ error: $.create(err) });\n    } else {\n      output({ runtime: $.get('runtime') });\n    }\n\n  });\n};\n"
     },
     {
       "dependencies": {
@@ -171,7 +171,7 @@
       "description": "FlowHub Runtime",
       "ns": "flowhub",
       "name": "runtime",
-      "fn": "output = function() {\n\n var runtime = new flowhub_registry.Runtime({\n   label: input.label,\n   id: input.id,\n   user: input.user,\n   secret: input.secret,\n   protocol: input.protocol,\n   address: input.address,\n   type: input.system\n });\n\n runtime.register(function(err) {\n   //cb({ runtime: runtime, error: err });\n   cb({ runtime: runtime });\n });\n\n};\n"
+      "fn": "output = function() {\n\n var runtime = new flowhub_registry.Runtime({\n   label: $.label,\n   id: $.id,\n   user: $.user,\n   secret: $.secret,\n   protocol: $.protocol,\n   address: $.address,\n   type: $.system\n });\n\n runtime.register(function(err) {\n   //cb({ runtime: runtime, error: err });\n   cb({ runtime: $.create(runtime) });\n });\n\n};\n"
     }
   ],
   "twigs": []
