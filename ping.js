@@ -12,7 +12,7 @@ module.exports = {
         title: "Flowhub Runtime",
         type: "function",
         async: true,
-        fn: function __RUNTIME__(data, x, source, state, input, output) {
+        fn: function __RUNTIME__(data, source, state, input, $, output) {
           var r = function() {
             $.runtime.ping(function(err) {
               if (err) {
